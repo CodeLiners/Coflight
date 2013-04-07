@@ -52,7 +52,7 @@
                 {% if widgets|length > 0 %}
                     <div class="span4">
                         {% for w in widgets %}
-                            {{ w->render() }}
+                            {{ w.render() }}
                         {% endfor %}
                     </div>
                 {% endif %}

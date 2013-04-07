@@ -5,6 +5,8 @@
     class PageMgr {
         private $twig;
         private $content = "";
+        private $nav = array();
+        private $widgets = array();
         function __construct()
         {
             require_once RDIR.'Twig'.DSEP.'Autoloader.php';
@@ -17,8 +19,14 @@
 
         public function render()
         {
+            $foot = PageReg::resolvePage("footer");
+            $foot = $foot != null ? $foot->render : "";
             echo $this->twig->render("@core/main.html", array(
-                "content" => $this->content
+                "content" => $this->content,
+                "nav" => $this->nav,
+                "snav" => array(),
+                "footer" => $foot,
+                "widgets" => $this->widgets
             ));
         }
     }

@@ -51,7 +51,9 @@
                 </div>
                 {% if widgets|length > 0 %}
                     <div class="span4">
-                        {{snav}}
+                        {% for w in widgets %}
+                            {{ w->render() }}
+                        {% endfor %}
                     </div>
                 {% endif %}
             </div>

@@ -13,6 +13,7 @@
             self::$instance = $this;
             $this->pageMgr = new PageMgr();
             $this->db = new MySQL($cfg['db']['host'], $cfg['db']['user'], $cfg['db']['pass'], $cfg['db']['db']);
+            date_default_timezone_set('UTC');
         }
 
         public function run()

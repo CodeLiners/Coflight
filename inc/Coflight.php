@@ -4,20 +4,24 @@
     */
     class Coflight
     {
-        private $page;
+        private $pageMgr;
         function __construct()
         {
-            $this->page = new PageMgr();
+            $this->pageMgr = new PageMgr();
         }
 
         public function run()
         {
-            # code...
+            
+            $n = "";
+            if (isset($_GET['p']))
+                $n = $_GET['p'];
+            $p = PageReg::resolvePage($n);
 
+            $this->pageMgr->content = $p->render();
+            $this->pageMgr->title = $p->getTitle();
 
-
-
-            $this->page->render();
+            $this->pageMgr->render();
         }
     }
 ?>

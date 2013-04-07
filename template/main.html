@@ -9,32 +9,36 @@
         <link href="css/bootstrap-responsive.css" rel="stylesheet">
     </head>
     <body>
-        <div>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="brand" href="?p=">{{ project }}</a>
+                    <ul class="nav">
+                        {% for e in nav %}
+                            {% set dropdown = (e.sub|length > 0) %}
+                            <li{% if e.active %} class="active"{% elseif dropdown %} class="dropdown"{% endif %}>
+                                <a{% if e.href %} href="{{e.href}}"{% endif %}{% if dropdown %} class="dropdown-toggle" data-toggle="dropdown"{% endif %}>{{e.title}}</a>
+                                {% if dropdown %}
+                                    <ul class="dropdown-menu">
+                                        {% for s in e.sub %}
+                                            <li>
+                                                <a{% if s.href %} href="{{s.href}}"{% endif %}>{{s.title}}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p>&nbsp;<br>&nbsp;</p>
+        <div class="container">
             <div class="row">
                 <div class="span12">
                     <h1>{{title}}</h1>
                     <br>
-                    <div class="navbar">
-                        <div class="navbar-inner">
-                            <ul class="nav">
-                                {% for e in nav %}
-                                    {% set dropdown = (e.sub|length > 0) %}
-                                    <li{% if e.active %} class="active"{% elseif dropdown %} class="dropdown"{% endif %}>
-                                        <a{% if e.href %} href="{{e.href}}"{% endif %}{% if dropdown %} class="dropdown-toggle" data-toggle="dropdown"{% endif %}>{{e.title}}</a>
-                                        {% if dropdown %}
-                                            <ul class="dropdown-menu">
-                                                {% for s in e.sub %}
-                                                    <li>
-                                                        <a{% if s.href %} href="{{s.href}}"{% endif %}>{{s.title}}</a>
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
-                                        {% endif %}
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="row">
@@ -43,16 +47,16 @@
                 {% if snav and snav|length > 0 %}
                     {% set midwidth = midwidth - 4 %}
                     <div class="span4">
-                        {{snav}}
+                        {{snav|raw}}
                     </div>
                 {% endif %}
                 <div class="span{{ midwidth }}">
-                    {{content}}
+                    {{content|raw}}
                 </div>
                 {% if widgets|length > 0 %}
                     <div class="span4">
                         {% for w in widgets %}
-                            {{ w.render() }}
+                            {{ w.render()|raw }}
                         {% endfor %}
                     </div>
                 {% endif %}
@@ -61,7 +65,7 @@
                 <div class="span12">
                     <hr>
                     <p class="text-center">
-                        {{footer}}
+                        {{footer|raw}}
                     </p>
                 </div>
             </div>    

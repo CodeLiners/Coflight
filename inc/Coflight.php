@@ -4,15 +4,22 @@
     */
     class Coflight
     {
+        public $db;
         private $pageMgr;
+        public static $instance;
         function __construct()
         {
+            global $cfg;
+            self::$instance = $this;
             $this->pageMgr = new PageMgr();
+            $this->db = new MySQL($cfg['db']['host'], $cfg['db']['user'], $cfg['db']['pass'], $cfg['db']['db']);
         }
 
         public function run()
         {
             
+            Module::loadAll($this);
+
             $n = "";
             if (isset($_GET['p']))
                 $n = $_GET['p'];

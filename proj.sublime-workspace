@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"ab",
+				"abstract"
+			],
+			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"Pa",
+				"PageErr"
+			],
+			[
+				"Page",
+				"PageMgr"
+			],
+			[
 				"pu",
 				"public"
 			],
@@ -315,15 +331,23 @@
 			"file": "index.php",
 			"settings":
 			{
-				"buffer_size": 454,
+				"buffer_size": 959,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "inc/Coflight.php",
+			"file": "Twig/Loader/Filesystem.php",
 			"settings":
 			{
-				"buffer_size": 541,
+				"buffer_size": 5727,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "template/main.html",
+			"settings":
+			{
+				"buffer_size": 3175,
 				"line_ending": "Windows"
 			}
 		},
@@ -331,31 +355,23 @@
 			"file": "inc/PageMgr.php",
 			"settings":
 			{
-				"buffer_size": 1136,
+				"buffer_size": 1327,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "inc/Page_ERR404.php",
+			"file": "inc_secondary/PageErr.php",
 			"settings":
 			{
-				"buffer_size": 611,
+				"buffer_size": 1298,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "on.php",
+			"file": ".htaccess",
 			"settings":
 			{
-				"buffer_size": 325,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "inc/Page.php",
-			"settings":
-			{
-				"buffer_size": 214,
+				"buffer_size": 93,
 				"line_ending": "Windows"
 			}
 		},
@@ -368,19 +384,28 @@
 			}
 		},
 		{
-			"file": "Twig/Loader/Filesystem.php",
+			"file": "inc/Module.php",
 			"settings":
 			{
-				"buffer_size": 5811,
-				"line_ending": "Unix"
+				"buffer_size": 907,
+				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "template/main.html",
+			"file": "modules/DbPageLoader/main.php",
 			"settings":
 			{
-				"buffer_size": 3132,
+				"buffer_size": 499,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "config.php",
+			"settings":
+			{
+				"buffer_size": 95,
+				"line_ending": "Windows",
+				"name": "<?php"
 			}
 		}
 	],
@@ -451,7 +476,7 @@
 				"Set Syntax: XML"
 			]
 		],
-		"width": 512.0
+		"width": 392.0
 	},
 	"console":
 	{
@@ -468,6 +493,16 @@
 	},
 	"file_history":
 	[
+		"/K/htdocs/_h5ai/server/php/index.php",
+		"/K/htdocs/_h5ai/server/php/inc/page.php",
+		"/K/htdocs/codeliners-cms/inc/Coflight.php",
+		"/K/htdocs/codeliners-cms/inc/PageErr.php",
+		"/K/htdocs/codeliners-cms/Twig/Error/Runtime.php",
+		"/K/htdocs/codeliners-cms/inc/PageReg.php",
+		"/K/htdocs/codeliners-cms/inc/Page.php",
+		"/K/htdocs/codeliners-cms/on.php",
+		"/K/htdocs/codeliners-cms/inc/PageHandler.php",
+		"/K/htdocs/codeliners-cms/inc/PageMgr.php",
 		"/K/htdocs/codeliners-cms/Twig/Loader/Filesystem.php",
 		"/K/htdocs/codeliners-cms/Twig/Autoloader.php",
 		"/K/pong.lua",
@@ -551,6 +586,10 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"m",
+			"findTemplate",
+			" findTemplate",
+			"findTemplate",
 			". ",
 			"port",
 			"bind",
@@ -599,7 +638,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 9,
 			"sheets":
 			[
 				{
@@ -607,15 +646,15 @@
 					"file": "index.php",
 					"settings":
 					{
-						"buffer_size": 454,
+						"buffer_size": 959,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								410,
-								410
+								453,
+								453
 							]
 						],
 						"settings":
@@ -630,127 +669,135 @@
 				},
 				{
 					"buffer": 1,
-					"file": "inc/Coflight.php",
+					"file": "Twig/Loader/Filesystem.php",
 					"settings":
 					{
-						"buffer_size": 541,
+						"buffer_size": 5727,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								165,
-								165
+								3579,
+								3591
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2684.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "inc/PageMgr.php",
+					"file": "template/main.html",
 					"settings":
 					{
-						"buffer_size": 1136,
+						"buffer_size": 3175,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								498,
-								498
+								1713,
+								1713
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/Twig/HTML (Twig).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 157.0,
+						"translation.y": 177.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "inc/Page_ERR404.php",
+					"file": "inc/PageMgr.php",
 					"settings":
 					{
-						"buffer_size": 611,
+						"buffer_size": 1327,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								70,
-								70
+								943,
+								943
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 297.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "on.php",
+					"file": "inc_secondary/PageErr.php",
 					"settings":
 					{
-						"buffer_size": 325,
+						"buffer_size": 1298,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								255,
-								255
+								603,
+								603
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.x": 81.0,
+						"translation.y": 260.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "inc/Page.php",
+					"file": ".htaccess",
 					"settings":
 					{
-						"buffer_size": 214,
+						"buffer_size": 93,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5,
-								5
+								1,
+								1
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -770,8 +817,36 @@
 						"selection":
 						[
 							[
-								344,
-								344
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "inc/Module.php",
+					"settings":
+					{
+						"buffer_size": 907,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								270,
+								270
 							]
 						],
 						"settings":
@@ -785,57 +860,54 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "Twig/Loader/Filesystem.php",
+					"buffer": 8,
+					"file": "modules/DbPageLoader/main.php",
 					"settings":
 					{
-						"buffer_size": 5811,
+						"buffer_size": 499,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5032,
-								5032
+								259,
+								259
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3277.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "template/main.html",
+					"buffer": 9,
+					"file": "config.php",
 					"settings":
 					{
-						"buffer_size": 3132,
+						"buffer_size": 95,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2616,
-								2616
+								92,
+								92
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Twig/HTML (Twig).tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"auto_name": "<?php",
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 776.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -888,6 +960,22 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"pa",
+				"inc/PageReg.php"
+			],
+			[
+				"co",
+				"inc/Coflight.php"
+			],
+			[
+				"mg",
+				"inc/PageMgr.php"
+			],
+			[
+				"r",
+				"Twig/Error/Runtime.php"
+			],
 			[
 				"main.py",
 				"/K/ctultsmcclone/1/main.py"

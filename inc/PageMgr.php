@@ -21,6 +21,7 @@
 
         public function render()
         {
+            global $cfg;
             $foot = PageReg::resolvePage("footer", false);
             $foot = $foot != null ? $foot->render() : "";
             echo self::$twig->render("@core/main.html", array(
@@ -30,7 +31,11 @@
                 "footer" => $foot,
                 "widgets" => $this->widgets,
                 "title" => $this->title,
-                "project" => "Dummy Project Name"
+                "project" => $cfg['project'],
+                "coflight" => array(
+                    "version" => COFLIGHT_VER,
+                    "link" => "https://github.com/CodeLiners/Coflight"
+                )
             ));
         }
 

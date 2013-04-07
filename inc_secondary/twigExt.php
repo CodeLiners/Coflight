@@ -19,7 +19,7 @@
     	} elseif ($minutes > 0) {
     		return("$minutes Minute".(($minutes == 1) ? '' : 's')." ago");
     	} else {
-    		return('Just now.');
+    		return('Just now');
     	}
     }));
     PageMgr::getTwig()->addFilter(new Twig_SimpleFilter('strftime', function($t, $f) {

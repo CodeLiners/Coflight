@@ -32,4 +32,9 @@
             $this->pageMgr->render();
         }
     }
+
+    function pageLink($page)
+    {
+        return "?p=".urlencode($page); // to be changed
+    }
 ?>

@@ -46,4 +46,18 @@
             self::$handlers[$ns][] = $handler;
         }
     }
+
+    class StartPage extends Page {
+        public function getTitle()
+        {
+            return "";
+        }
+
+        public function render()
+        {
+            header("Location: ".pageLink("start"));
+        }
+    }
+
+    PageReg::registerPage("", new StartPage());
 ?>

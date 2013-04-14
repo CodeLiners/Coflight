@@ -1,3 +1,10 @@
+<form method="POST" action="{{pageLink("dbpageadm:create")}}">
+    <div class="input-append">
+        <input type="text" name="page" placeholder="Create Page">
+        <button type="submit" class="btn">Create</button>
+    </div>
+</form><br>
+
 {% if pages|length == 0 %}
     <div class="muted"><i>Nothing to display</i></div>
 {% else %}
@@ -9,10 +16,12 @@
             <th>Options</th>
         </tr>
         {% for page in pages %}
-            <td>{{page.name}}</td>
-            <td>{{page.title}}</td>
-            <td><acronym title="{{page.edit_time|strftime("%a, %B, %e %Y - %H:%M")}}">{{page.edit_time|reltime}}</acronym> by {{page.edit_by}}</td>
-            <td>&nbsp;</td>
+            <tr>
+                <td>{{page.name}}</td>
+                <td>{{page.title}}</td>
+                <td><acronym title="{{page.edit_time|strftime("%a, %B, %e %Y - %H:%M")}}">{{page.edit_time|reltime}}</acronym> by {{page.edit_by}}</td>
+                <td>&nbsp;</td>
+            </tr>
         {% endfor %}
     </table>
 {% endif %}

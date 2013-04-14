@@ -5,7 +5,7 @@
     */
 
     define("COFLIGHT", true);
-    define("COFLIGHT_VER", "0.1.0");
+    define("COFLIGHT_VER", "0.2.0");
     define('DSEP', DIRECTORY_SEPARATOR);
     define('RDIR', dirname(__FILE__).DSEP);
     

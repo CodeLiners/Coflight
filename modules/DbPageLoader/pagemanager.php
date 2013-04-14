@@ -33,6 +33,28 @@
         }
     }
 
+    /**
+    * 
+    */
+    class PageCreateDBPage extends Page
+    {
+        private $page;
+        function __construct($page)
+        {
+            $this->page = $page;
+        }
+
+        public function getTitle()
+        {
+            return "";
+        }
+
+        public function render()
+        {
+            $res = Coflight::$instance->db->query("INSERT INTO ".DB_PREF."pages ");
+        }
+    }
+
     class DBAdmPageHandler extends PageHandler {
 
         public function resolvePage($name)
@@ -47,6 +69,18 @@
                     else
                         $id = 1;
                     return new PageListDBPages($id);
+                case 'create':
+                    if (!User::getCurrent()->hasPermission("newpage"))
+                        return PageReg::resolvePage("err:401");
+                    if (!isset($data[1])) {
+                        header("Locaction: ".pageLink(User::getCurrent()->hasPermission("listpages") ? "dbpageadm:list" : "start"));
+                        return new EmptyPage();
+                    }
+                    if (PageMgr::resolvePage($data[1]) != null) {
+                        //return new PageEditDBPage($data[1]);
+                    }   
+
+                    return new PageCreateDBPage($data[1]);
                 default:
                     return null;
             }

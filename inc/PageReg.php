@@ -59,5 +59,21 @@
         }
     }
 
+    /**
+    * An Empty Page
+    */
+    class EmptyPage extends Page
+    {
+        public function getTitle()
+        {
+            return "";
+        }
+
+        public function render()
+        {
+            return "";
+        }
+    }
+
     PageReg::registerPage("", new StartPage());
 ?>

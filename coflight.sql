@@ -10,16 +10,28 @@ Target Server Type    : MYSQL
 Target Server Version : 50516
 File Encoding         : 65001
 
-Date: 2013-04-13 23:37:54
+Date: 2013-04-14 15:36:23
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
+-- Table structure for `navi`
+-- ----------------------------
+CREATE TABLE `navi` IF NOT EXISTS (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `uid` varchar(20) NOT NULL,
+  `href` varchar(255) NOT NULL,
+  `type` enum('internal','external') NOT NULL DEFAULT 'internal',
+  `title` varchar(255) NOT NULL,
+  `parent` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
 -- Table structure for `pages`
 -- ----------------------------
-DROP TABLE IF EXISTS `pages`;
-CREATE TABLE `pages` (
+CREATE TABLE `pages` IF NOT EXISTS (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `edit_time` bigint(20) NOT NULL,
@@ -38,16 +50,11 @@ INSERT INTO `pages` VALUES ('1', 'start', '0', 'System', '0', 'LALALALALALAL', '
 -- ----------------------------
 -- Table structure for `users`
 -- ----------------------------
-DROP TABLE IF EXISTS `users`;
-CREATE TABLE `users` (
+CREATE TABLE `users` IF NOT EXISTS (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `pass_hash` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `permissions` enum('user','writer','admin') NOT NULL DEFAULT 'user',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of users
--- ----------------------------
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;

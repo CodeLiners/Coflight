@@ -1,0 +1,28 @@
+<div class="btn-group">
+    {% if current < 2 %}
+        <a class="btn disabled">&laquo;</a>
+    {% else %}
+        <a class="btn" href="{{ pageLink(insertVars(link, {"page": 1})) }}">&laquo;</a>
+    {% endif %}
+    test
+    {% set sta = current - 5 %}
+    {% if sta < 1 %}
+        {% set sta = 1 %}
+    {% endif %}
+    {% set end = current + 5 %}
+    {% if end > count %}
+        {% set end = count %}
+    {% endif %}
+    {% for i in range(sta, end) %}
+        {% if current == i %}
+            <a class="btn btn-primary">{{i}}</a>
+        {% else %}
+            <a class="btn" href="{{ pageLink(insertVars(link, {"page": i})) }}">{{i}}</a>
+        {% endif %}
+    {% endfor %}
+    {% if current >= count %}
+        <a class="btn disabled">&raquo;</a>
+    {% else %}
+        <a class="btn" href="{{ pageLink(insertVars(link, {"page": count})) }}">&raquo;</a>
+    {% endif %}
+</div>

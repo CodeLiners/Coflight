@@ -23,6 +23,18 @@
     	}
     }));
     PageMgr::getTwig()->addFilter(new Twig_SimpleFilter('strftime', function($t, $f) {
-        return strftime($f, (int) $t);
+        return strftime($f, (int) $t); // TODO: Fix This
     }));
+    PageMgr::getTwig()->addFunction(new Twig_SimpleFunction('pageSelector', function($cur, $count, $linktemplate) {
+        return PageMgr::getTwig()->render('@core/pagination.html', array("current" => $cur, "count" => $count, "link" => $linktemplate));
+    }, array("is_safe" => array("html"))));
+    $stringLoader = new Twig_Loader_String();
+    $stringEnv = new Twig_Environment($stringLoader);
+    PageMgr::getTwig()->addFunction(new Twig_SimpleFunction('insertVars', function($string, $vars) {
+        foreach ($vars as $key => $value) {
+            $string = str_replace('${'.$key.'}', $value, $string);
+        }
+        return $string;
+    }));
+    PageMgr::getTwig()->addFunction(new Twig_SimpleFunction('pageLink', 'pageLink'));
 ?>

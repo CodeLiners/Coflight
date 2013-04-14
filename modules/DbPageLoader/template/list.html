@@ -1,0 +1,19 @@
+{% if pages|length == 0 %}
+    <div class="muted"><i>Nothing to display</i></div>
+{% else %}
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Last edit</th>
+            <th>Options</th>
+        </tr>
+        {% for page in pages %}
+            <td>{{page.name}}</td>
+            <td>{{page.title}}</td>
+            <td><acronym title="{{page.edit_time|strftime("%a, %B, %e %Y - %H:%M")}}">{{page.edit_time|reltime}}</acronym> by {{page.edit_by}}</td>
+            <td>&nbsp;</td>
+        {% endfor %}
+    </table>
+{% endif %}
+{{ pageSelector(currentPage, pageCount, "dbpageadm:list/${page}") }}

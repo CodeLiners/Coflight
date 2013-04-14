@@ -39,6 +39,11 @@
             ));
         }
 
+        public function setNavi($navi)
+        {
+            $this->nav = $navi;
+        }
+
         public static function getTwig() {
             return self::$twig;
         }

@@ -5,7 +5,7 @@
     class Coflight
     {
         public $db;
-        private $pageMgr;
+        public $pageMgr;
         public static $instance;
         function __construct()
         {
@@ -35,6 +35,14 @@
 
     function pageLink($page)
     {
-        return "?p=".urlencode($page); // to be changed
+        return "?p=".url_encode($page); // to be changed
+    }
+
+    function url_encode($url)
+    {
+        $url = urlencode($url);
+        $url = str_replace("%3A", ":", $url);
+        $url = str_replace("%2F", "/", $url);
+        return $url;
     }
 ?>

@@ -23,7 +23,7 @@
 
         public function resolvePage($name)
         {
-            $res = Coflight::$instance->db->query("SELECT * FROM pages WHERE name = '".sql_escape($name)."'");
+            $res = Coflight::$instance->db->query("SELECT * FROM ".DB_PREF."pages WHERE name = '".sql_escape($name)."'");
 
             if ($p = $res->fetchObject()) {
                 return new DBPage($p);
@@ -58,6 +58,9 @@
             return $this->datares->title;
         }
     }
+
+    include RDIR."modules".DSEP."DbPageLoader".DSEP."pagemanager.php";
+    include RDIR."modules".DSEP."DbPageLoader".DSEP."navi.php";
 
     $m = new ModuleDbPageLoader();
     $m->init();

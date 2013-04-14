@@ -20,7 +20,9 @@
                 <td>{{page.name}}</td>
                 <td>{{page.title}}</td>
                 <td><acronym title="{{page.edit_time|strftime("%a, %B, %e %Y - %H:%M")}}">{{page.edit_time|reltime}}</acronym> by {{page.edit_by}}</td>
-                <td>&nbsp;</td>
+                <td><div class="btn-group">
+                    <a href="{{pageLink("dbpageadm:edit/" + page.name)}}" class="btn">Edit</a>
+                </div></td>
             </tr>
         {% endfor %}
     </table>

@@ -13,6 +13,23 @@
             <div class="navbar-inner">
                 <div class="container">
                     <a class="brand" href="?p=">{{ project }}</a>
+                    <ul class="nav pull-right">
+                        {% for e in navright %}
+                            {% set dropdown = (e.sub|length > 0) %}
+                            <li{% if e.active %} class="active"{% elseif dropdown %} class="dropdown"{% endif %}>
+                                <a{% if e.href %} href="{% if e.type == "external" %}{{e.href}}{% else %}{{ pageLink(e.href) }}{% endif %}"{% endif %}{% if dropdown %} class="dropdown-toggle" data-toggle="dropdown"{% endif %}>{{e.title}}</a>
+                                {% if dropdown %}
+                                    <ul class="dropdown-menu">
+                                        {% for s in e.sub %}
+                                            <li>
+                                                <a{% if s.href %} href="{% if s.type == "external" %}{{s.href}}{% else %}{{ pageLink(s.href) }}{% endif %}"{% endif %}>{{s.title}}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
                     <ul class="nav">
                         {% for e in nav %}
                             {% set dropdown = (e.sub|length > 0) %}

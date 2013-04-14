@@ -3,9 +3,14 @@
         protected $name;
 
         public abstract function hasPermission($name);
+        public abstract function getName();
 
         public static function getCurrent() {
             return Usersys::getHandler()->getCurrentUser();
+        }
+
+        public static function exists($name) {
+            return Usersys::getHandler()->exists($name);
         }
     }
 
@@ -22,5 +27,6 @@
 
     interface IUserHandler {
         public function getCurrentUser();
+        public function exists($nane);
     }
 ?>

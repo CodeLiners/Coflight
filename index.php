@@ -9,6 +9,21 @@
     define('DSEP', DIRECTORY_SEPARATOR);
     define('RDIR', dirname(__FILE__).DSEP);
     
+    function startsWith($haystack, $needle)
+    {
+        return !strncmp($haystack, $needle, strlen($needle));
+    }
+
+    function endsWith($haystack, $needle)
+    {
+        $length = strlen($needle);
+        if ($length == 0) {
+            return true;
+        }
+
+        return (substr($haystack, -$length) === $needle);
+    }
+
     require RDIR.'config.php';
     global $cfg;
     define("DB_PREF", $cfg['db']['tabprefix']);

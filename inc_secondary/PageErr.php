@@ -29,7 +29,7 @@
     class ErrHandler extends PageHandler
     {
         private static $terms = array(
-            "401" => "Bad Request",
+            "400" => "Bad Request",
             "401" => "Unauthorized",
             "404" => "Not Found",
         );

@@ -1,0 +1,27 @@
+{% if error %}
+    {{error}}
+{% endif %}
+
+<form class="form-horizontal" method="POST" action="{{pageLink(posttar)}}">
+    <input type="hidden" name="post" value="yes">    
+    <div class="control-group">
+        <label class="control-label" for="iUser">Username</label>
+        <div class="controls">
+            <input type="text" id="iUser" placeholder="Username" name="user">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="iPassword">Password</label>
+        <div class="controls">
+            <input type="password" id="iPassword" placeholder="Password" name="pw">
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            {#<label class="checkbox">
+                <input type="checkbox"> Remember me
+            </label>#}
+            <button type="submit" class="btn">Log in</button>
+        </div>
+    </div>
+</form>

@@ -14,6 +14,7 @@
 
         public function render()
         {
+
             $sta = ($this->pageid - 1) * 20;
             $count = Coflight::$instance->db->query("SELECT COUNT(id) FROM ".DB_PREF."pages")->fetchArray();
             $count = $count[0];
@@ -39,6 +40,8 @@
             $data = explode("/", $name);
             switch ($data[0]) {
                 case 'list':
+                    if (!User::getCurrent()->hasPermission("listpages"))
+                        return PageReg::resolvePage("err:401");
                     if (isset($data[1]))
                         $id = (int) $data[1];
                     else

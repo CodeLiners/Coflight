@@ -18,12 +18,12 @@
 
         public function run()
         {
-            
-            Module::loadAll($this);
-
             $n = "";
             if (isset($_GET['p']))
                 $n = $_GET['p'];
+            define("PAGE", $n);
+            Module::loadAll($this);
+
             $p = PageReg::resolvePage($n);
 
             $this->pageMgr->content = $p->render();

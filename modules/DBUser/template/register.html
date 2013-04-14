@@ -1,0 +1,37 @@
+{% if error %}
+    {{error}}
+{% endif %}
+
+<form class="form-horizontal" method="POST" action="{{pageLink(posttar)}}">
+    <input type="hidden" name="post" value="yes">
+    <div class="control-group">
+        <!-- no, i am no apple fan, the i stands for input -->
+        <label class="control-label" for="iUser">Username</label>
+        <div class="controls">
+            <input type="text" id="iUser" placeholder="Username" name="user"{% if user %} value="{{user}}"{% endif %} required>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="iPassword1">Password</label>
+        <div class="controls">
+            <input type="password" id="iPassword1" placeholder="Password" name="pw1" required>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="iPassword2">Repeat Password</label>
+        <div class="controls">
+            <input type="password" id="iPassword2" placeholder="Password" name="pw2" required>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="iMail">EMail</label>
+        <div class="controls">
+            <input type="email" id="iMail" placeholder="someone@example.com" name="mail"{% if mail %} value="{{mail}}"{% endif %} required>
+        </div>
+    </div>
+    <div class="control-group">
+        <div class="controls">
+            <button type="submit" class="btn">Register</button>
+        </div>
+    </div>
+</form>

@@ -8,6 +8,7 @@
         public $content = "";
         public $title = "";
         private $nav = array();
+        private $navright = array();
         private $widgets = array();
         function __construct()
         {
@@ -32,6 +33,7 @@
                 "widgets" => $this->widgets,
                 "title" => $this->title,
                 "project" => $cfg['project'],
+                "navright" => $this->navright,
                 "coflight" => array(
                     "version" => COFLIGHT_VER,
                     "link" => "https://github.com/CodeLiners/Coflight"
@@ -42,6 +44,11 @@
         public function setNavi($navi)
         {
             $this->nav = $navi;
+        }
+
+        public function addNavRight($entry)
+        {
+            $this->navright[] = $entry;
         }
 
         public static function getTwig() {
